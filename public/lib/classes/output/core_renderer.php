@@ -1495,6 +1495,10 @@ class core_renderer extends renderer_base {
         $context->ariarole = !empty($bc->attributes['role']) ? $bc->attributes['role'] : '';
         $context->class = $bc->attributes['class'];
         $context->type = $bc->attributes['data-block'];
+        $context->showtitle = true;
+        if (!is_string($bc->title)) {
+            $context->showtitle = false;
+        }
         $context->title = $bc->title;
         $context->content = $bc->content;
         $context->annotation = $bc->annotation;
